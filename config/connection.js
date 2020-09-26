@@ -14,7 +14,7 @@ connection.connect(function (error) {
         throw error;
     }
 
-    console.log(`Connected to database as id ${connection.threadId}`);
+    console.log(`Connected to database id ${connection.threadId}`);
 });
 
 connection.query = util.promisify(connection.query);

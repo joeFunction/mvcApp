@@ -1,4 +1,4 @@
-// Import MySQL connection.
+// Import MySQL connection
 const connection = require("./connection.js");
 
 // Helper function for SQL syntax.
@@ -20,10 +20,10 @@ const printQuestionMarks = num => {
 const objToSql = ob => {
   const arr = [];
 
-  // loop through the keys and push the key/value as a string int arr
+  // Loop through the keys and push the key/value as a string int arr
   for (const key in ob) {
     let value = ob[key];
-    // check to skip hidden properties
+    // Check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
       // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
@@ -35,7 +35,7 @@ const objToSql = ob => {
     }
   }
 
-  // translate array of strings to a single comma-separated string
+  // Translate array of strings to a single comma-separated string
   return arr.toString();
 }
 
